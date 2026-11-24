@@ -1,14 +1,15 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:responsive_dashboard/views/dashboard_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResponsiveDashboard());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ResponsiveDashboard extends StatelessWidget {
+  const ResponsiveDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold());
+    return MaterialApp(home: DashboardView());
   }
 }
