@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/widgets/custom_drawer.dart';
-import 'package:responsive_dashboard/widgets/my_card_section.dart';
 import 'package:responsive_dashboard/widgets/second_section.dart';
+import 'package:responsive_dashboard/widgets/third_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const new({super.key});
@@ -20,7 +20,12 @@ class DashboardDesktopLayout extends StatelessWidget {
           ),
         ),
         SizedBox(width: 24),
-        Expanded(child: MyCardSection()),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 40, right: 32),
+            child: ThirdSection(),
+          ),
+        ),
       ],
     );
   }
