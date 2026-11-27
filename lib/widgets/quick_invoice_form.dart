@@ -1,9 +1,18 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:responsive_dashboard/utils/app_style.dart';
 import 'package:responsive_dashboard/widgets/custom_button.dart';
+import 'package:responsive_dashboard/widgets/custom_dropdown.dart';
 import 'package:responsive_dashboard/widgets/title_text_field.dart';
 
-class QuickInvoiceForm extends StatelessWidget {
+class QuickInvoiceForm extends StatefulWidget {
   const new({super.key});
+
+  @override
+  State<QuickInvoiceForm> createState() => _QuickInvoiceFormState();
+}
+
+class _QuickInvoiceFormState extends State<QuickInvoiceForm> {
+  String currency = 'USD';
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +43,19 @@ class QuickInvoiceForm extends StatelessWidget {
             ),
             SizedBox(width: 16),
             Expanded(
-              child: TitleTextField(title: "Item mount", hint: "USD"),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Item Mount", style: AppStyles.styleMedium16(context)),
+                  SizedBox(height: 12),
+                  CustomDropdown(
+                    items: const ['USD', 'EGP', 'EUR'],
+                    value: currency,
+                    fillColor: const Color(0xffFAFAFA),
+                    onChanged: (v) => setState(() => currency = v),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
