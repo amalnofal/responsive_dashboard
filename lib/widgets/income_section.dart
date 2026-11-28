@@ -15,14 +15,12 @@ class IncomeSection extends StatelessWidget {
         children: [
           IncomeHeader(),
           SizedBox(height: 16),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(child: IncomeChart()),
-                SizedBox(width: 40),
-                Expanded(child: IncomeDetails()),
-              ],
-            ),
+          Row(
+            children: [
+              Expanded(child: IncomeChart()),
+              SizedBox(width: 40),
+              Expanded(child: IncomeDetails()),
+            ],
           ),
           Divider(height: 48, color: Color(0xffF1F1F1)),
           CustomButton(
